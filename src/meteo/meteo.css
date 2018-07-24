@@ -1,0 +1,14 @@
+.meteo {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.meteo-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+.meteo-img {
+    margin-left: auto;
+}

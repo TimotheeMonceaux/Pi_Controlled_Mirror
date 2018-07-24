@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './meteo.css';
 import config from './config.json';
 
 class Meteo extends Component {
@@ -34,7 +35,7 @@ class Meteo extends Component {
             loaded: true,
             name: data.name,
             description: data.weather[0].description,
-            icon: [<img src={"http://openweathermap.org/img/w/"+data.weather[0].icon+".png"} alt="Weather Icon" />],
+            icon: [<img src={"http://openweathermap.org/img/w/"+data.weather[0].icon+".png"} alt="Weather Icon" className="meteo-img" />],
             temp: data.main.temp,
             min: data.main.temp_min,
             max: data.main.temp_max
@@ -44,7 +45,7 @@ class Meteo extends Component {
     render() {
         if (!this.state.loaded)
             return(<p>Loading...</p>);
-        return (<div className="meteo">{this.state.icon} {this.state.name}: {this.state.description} - {this.state.temp} ({this.state.min} - {this.state.max})</div>)
+        return (<div className="meteo">{this.state.icon} <span className="meteo-text">{this.state.name+': '+this.state.description+' - '+this.state.temp+'°C ('+this.state.min+'°C - '+this.state.max+'°C)'}</span></div>)
     }
 }
 
