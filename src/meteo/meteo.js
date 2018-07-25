@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './meteo.css';
 import config from './config.json';
+import './weather-icons/css/weather-icons.min.css';
+import mapping from './weather-icons/mapping.json';
 
 class Meteo extends Component {
     constructor(props) {
@@ -34,8 +36,8 @@ class Meteo extends Component {
         .then(data => this.setState({
             loaded: true,
             name: data.name,
-            description: data.weather[0].description,
-            icon: [<img src={"http://openweathermap.org/img/w/"+data.weather[0].icon+".png"} alt="Weather Icon" className="meteo-img" />],
+            description: this.firstLetterToUpperCase(data.weather[0].description),
+            icon: [<i className={mapping[data.weather[0].icon]}></i>],
             temp: data.main.temp,
             min: data.main.temp_min,
             max: data.main.temp_max
@@ -45,7 +47,19 @@ class Meteo extends Component {
     render() {
         if (!this.state.loaded)
             return(<p>Loading...</p>);
-        return (<div className="meteo">{this.state.icon} <span className="meteo-text">{this.state.name+': '+this.state.description+' - '+this.state.temp+'°C ('+this.state.min+'°C - '+this.state.max+'°C)'}</span></div>)
+        return (
+        <div className="meteo">
+            <div className="meteo-top">
+                <b>{this.state.name}</b> : {this.state.description}
+            </div>
+            <div className="meteo-bottom">
+                {this.state.icon} <b>{this.state.temp +'°C'}</b> {'('+this.state.min+' - '+this.state.max+')'}
+            </div>
+        </div>)
+    }
+
+    firstLetterToUpperCase(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 }
 

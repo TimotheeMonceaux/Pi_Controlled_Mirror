@@ -1,14 +1,22 @@
 .meteo {
-    display: flex;
-    margin-bottom: 10px;
+    display: block;
+    color: #BBB;
+    font-size: 150%;
+    width: 20%;
+    text-align: left;
+    padding: 0px 15px;
+    border-left: solid 1px white;
 }
 
-.meteo-text {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: auto;
+.meteo b {
+    color: white;
 }
 
-.meteo-img {
-    margin-left: auto;
+.meteo .wi {
+    color: white;
+    font-size: 160%;
+}
+
+.meteo .meteo-top {
+    margin-bottom: 5px;
 }
