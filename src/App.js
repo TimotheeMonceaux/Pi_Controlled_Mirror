@@ -8,8 +8,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Clock />
-        <Meteo />
+        <div className="App-row">
+          <Clock />
+          <Meteo />
+        </div>
+          <div className="App-row">
+        </div>
         <XKCD />
       </div>
     );

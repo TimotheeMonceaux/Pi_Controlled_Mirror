@@ -1,0 +1,19 @@
+.clock {
+    display: block;
+    color: #BBB;
+    font-size: 160%;
+    min-width: 225px;
+    width: 30%;
+    text-align: right;
+    padding: 0px 15px;
+    border-right: solid 1px white;
+}
+
+.clock-top b {
+    color:white;
+    font-size: 180%;
+}
+
+.clock-bottom {
+    color: white;
+}

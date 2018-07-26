@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import './clock.css';
+import moment from 'moment';
 
 class Clock extends Component {
     constructor(props) {
         super(props);
+        let m = moment();
         this.state = {
-            time: new Date().toLocaleString()
+            date: m.format("D MMMM YYYY"),
+            time: m.format("hh:mm"),
+            sec: m.format("ss")
         }
     }
 
@@ -20,13 +25,20 @@ class Clock extends Component {
     }
 
     tick() {
+        let m = moment();
         this.setState({
-            time: new Date().toLocaleString()
+            date: m.format("D MMMM YYYY"),
+            time: m.format("hh:mm"),
+            sec: m.format("ss")
         })
     }
 
     render() {
-        return (<div className="clock"><h1>{this.state.time}</h1></div>)
+        return (
+            <div className="clock">
+                <div className="clock-top"><b>{this.state.time}</b> : {this.state.sec}</div>
+                <div className="clock-bottom"><b>{this.state.date}</b></div>
+            </div>)
     }
 }
 

@@ -2,6 +2,7 @@
     display: block;
     color: #BBB;
     font-size: 150%;
+    min-width: 225px;
     width: 30%;
     text-align: left;
     padding: 0px 15px;
