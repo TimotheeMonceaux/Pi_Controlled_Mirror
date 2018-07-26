@@ -29,7 +29,7 @@ class Clock extends Component {
         let m = moment();
         this.setState({
             date: m.format("D MMMM YYYY"),
-            time: m.format("hh:mm"),
+            time: m.format("HH:mm"),
             sec: m.format("ss")
         })
     }
