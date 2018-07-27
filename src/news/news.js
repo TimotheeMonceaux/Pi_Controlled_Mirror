@@ -25,7 +25,7 @@ class News extends Component {
     }
 
     refresh() {
-        fetch('https://newsapi.org/v2/top-headlines?country='+config.country+'&apiKey='+config.apikey)
+        fetch('https://newsapi.org/v2/top-headlines?sources='+config.sources+'&apiKey='+config.apikey)
         .then(response => response.json())
         .then(data => this.setState({
             loaded: true,
@@ -41,14 +41,14 @@ class News extends Component {
             return(<p>Could not load news: "{this.state.status}"</p>);
         return (
         <div className="news">
-            {this.state.articles.slice(0,3).map(article => this.renderArticle(article))}
+            {this.state.articles.slice(0, config.count).map(article => this.renderArticle(article))}
         </div>)
     }
 
     renderArticle(article) {
         return (
             <div key={article.url} className="news-article">
-                <div className="news-article-header">{article.title}</div>
+                <div className="news-article-header">{article.title} <span className="news-article-source">({article.source.name})</span></div>
                 <div className="news-article-body">{article.description}</div>
             </div>
         );

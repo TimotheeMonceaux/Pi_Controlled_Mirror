@@ -13,6 +13,12 @@
     font-size: 110%;
 }
 
+.news-article-source {
+    color: #BBB;
+    font-size: 80%;
+    font-style: italic;
+}
+
 .news-article-body {
     color: #BBB;
 }
