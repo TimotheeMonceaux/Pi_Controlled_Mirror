@@ -3,6 +3,7 @@ import './App.css';
 import Clock from './clock/clock.js';
 import XKCD from './xkcd/xkcd.js';
 import Meteo from './meteo/meteo.js';
+import News from './news/news.js';
 
 class App extends Component {
   render() {
@@ -12,7 +13,8 @@ class App extends Component {
           <Clock />
           <Meteo />
         </div>
-          <div className="App-row">
+        <div className="App-row">
+          <News />
         </div>
         <XKCD />
       </div>
