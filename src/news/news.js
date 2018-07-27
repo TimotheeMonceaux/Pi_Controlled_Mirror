@@ -46,7 +46,12 @@ class News extends Component {
     }
 
     renderArticle(article) {
-        return (<p>{article.title}</p>);
+        return (
+            <div key={article.url} className="news-article">
+                <div className="news-article-header">{article.title}</div>
+                <div className="news-article-body">{article.description}</div>
+            </div>
+        );
     }
 }
 

@@ -3,3 +3,16 @@
     display: flex;
     flex-direction: column;
 }
+
+.news-article {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.news-article-header {
+    font-size: 110%;
+}
+
+.news-article-body {
+    color: #BBB;
+}
