@@ -37,7 +37,7 @@ class Meteo extends Component {
             loaded: true,
             name: data.name,
             description: this.firstLetterToUpperCase(data.weather[0].description),
-            icon: [<i className={mapping[data.weather[0].icon]}></i>],
+            icon: [<i key="meteo-icon" className={mapping[data.weather[0].icon]}></i>],
             temp: data.main.temp,
             min: data.main.temp_min,
             max: data.main.temp_max
